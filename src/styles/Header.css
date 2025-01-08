@@ -1,0 +1,187 @@
+.header {
+  background-color: var(--surface-color);
+  border-bottom: 1px solid rgba(255, 152, 0, 0.1);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+/* ............................ */
+
+.logo img {
+  width: 70px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Language Switcher */
+.language-switcher {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.lang-btn {
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: none;
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 152, 0, 0.5);
+}
+
+.lang-btn.active {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  padding: 1rem 0;
+}
+
+.header.menu-open .mobile-menu {
+  display: block;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.mobile-language-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Animation for mobile menu */
+.mobile-menu {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus states for accessibility */
+.nav-link:focus,
+.lang-btn:focus,
+.mobile-menu-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Active state for current page */
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}

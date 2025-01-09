@@ -29,6 +29,8 @@ export const translations = {
     currency: "درهم",
     proceedToCheckout: "الانتقال إلى الدفع",
     clearCart: "إفراغ العربة",
+    allRightsReserved: "جميع الحقوق محفوظة",
+    foundedBy: "أسسها",
     // Product names
     "عسل الدغموس": "عسل الدغموس",
     "عسل الخروب": "عسل الخروب",
@@ -74,6 +76,8 @@ export const translations = {
     currency: "DHS",
     proceedToCheckout: "Proceed to Checkout",
     clearCart: "Clear Cart",
+    allRightsReserved: "All rights reserved",
+    foundedBy: "Founded by",
     // Product names
     "عسل الدغموس": "Daghmous Honey",
     "عسل الخروب": "Carob Honey",
@@ -119,6 +123,8 @@ export const translations = {
     currency: "DHS",
     proceedToCheckout: "Passer à la caisse",
     clearCart: "Vider le panier",
+    allRightsReserved: "Tous droits réservés",
+    foundedBy: "Fondé par",
     // Product names
     "عسل الدغموس": "Miel de Daghmous",
     "عسل الخروب": "Miel de Caroube",

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from '../src/LanguageContext';
+import ProductsGrid from './ProductsGrid';
+
 import l3gber from '../imgs/3gber.jpg';
 import amlo_loz from '../imgs/amlo-loz.jpg';
 import dghmouss from '../imgs/dghmouss.jpg';
@@ -111,6 +113,12 @@ function HomePage() {
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+      <section className="home-products">
+        <div className="container">
+          <h2>{t('ourProducts')}</h2>
+          <ProductsGrid />
         </div>
       </section>
     </div>

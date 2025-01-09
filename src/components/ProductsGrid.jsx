@@ -170,37 +170,34 @@ function ProductsGrid() {
 
   return (
     <div className="products-grid">
-      <div className="container">
-        <h2>{t('ourProducts')}</h2>
-        <div className="grid">
-          {products.map((product) => (
-            <div key={product.id} className="product-card">
-              <img src={product.image} alt={t(product.name)} />
-              <h3>{t(product.name)}</h3>
-              <p className="description">{product.description}</p>
-              <div className="sizes">
-                <select 
-                  value={selectedSize[product.id]?.quantity || product.sizes[0].quantity} 
-                  onChange={(e) => handleSizeChange(product.id, product.sizes.find(s => s.quantity === e.target.value))}
-                >
-                  {product.sizes.map((size) => (
-                    <option key={size.quantity} value={size.quantity}>
-                      {size.quantity} - {size.price} dhs
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="product-actions">
-                <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
-                  {t('addToCart')}
-                </button>
-                <Link to={`/product/${product.id}`} className="view-details">
-                  {t('viewDetails')}
-                </Link>
-              </div>
+      <div className="grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={product.image} alt={t(product.name)} />
+            <h3>{t(product.name)}</h3>
+            <p className="description">{t(product.description)}</p>
+            <div className="sizes">
+              <select 
+                value={selectedSize[product.id]?.quantity || product.sizes[0].quantity} 
+                onChange={(e) => handleSizeChange(product.id, product.sizes.find(s => s.quantity === e.target.value))}
+              >
+                {product.sizes.map((size) => (
+                  <option key={size.quantity} value={size.quantity}>
+                    {size.quantity} - {size.price} {t('currency')}
+                  </option>
+                ))}
+              </select>
             </div>
-          ))}
-        </div>
+            <div className="product-actions">
+              <button className="add-to-cart" onClick={() => handleAddToCart(product)}>
+                {t('addToCart')}
+              </button>
+              <Link to={`/product/${product.id}`} className="view-details">
+                {t('viewDetails')}
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
